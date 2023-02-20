@@ -67,18 +67,21 @@ export async function commands(client, message){
       break;
     
     case iaCommands.dalle:
+      const nameAutor = "Matheus Oliveira";
       const imgDescription = message.text;
-      client.sendText(message.from == process.env.PHONE_NUMBER ? message.to : message.from, "Aguarde, estou processando");
+      client.sendText(message.from == process.env.PHONE_NUMBER ? message.to : message.from, `Esse recurso está desativado pelo meu autor: ${nameAutor}.`);
 
-      getDalleResponse(imgDescription, message)
-        .then(imgUrl => {
-        client.sendImage(
-          message.from === process.env.PHONE_NUMBER ? message.to : message.from,
-          imgUrl,
-          imgDescription,
-          'Imagem gerada pelo teteu :#'
-        );
-      });
+      // Recurso desativado por falta de money...
+      
+      // getDalleResponse(imgDescription, message)
+      //   .then(imgUrl => {
+      //   client.sendImage(
+      //     message.from === process.env.PHONE_NUMBER ? message.to : message.from,
+      //     imgUrl,
+      //     imgDescription,
+      //     'Imagem gerada pelo teteu :#'
+      //   );
+      // });
       break;
       default: 
       break;

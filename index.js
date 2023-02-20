@@ -4,7 +4,7 @@ import { commands } from './controllers/responsesController.js';
 import express from 'express';
 import http from 'http';
 import { body } from 'express-validator';
-import { sendMessage } from './controllers/routesController.js';
+// import { sendMessage } from './controllers/routesController.js';
 
 const app = express();
 
@@ -18,7 +18,7 @@ app.use(express.urlencoded({extended: false}));
 const configCreate = {
   session: 'Chat-GPT',
   multidevice: true,
-  headless: false
+  headless: true
 };
 
 create(configCreate)
